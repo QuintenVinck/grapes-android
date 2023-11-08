@@ -15,6 +15,9 @@ RUN mkdir "$ANDROID_HOME" .android \
 #    && yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 # Install Android Build Tool and Libraries
 #RUN $ANDROID_HOME/tools/bin/sdkmanager --update
+RUN $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "tools"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
