@@ -26,7 +26,7 @@ pipeline {
                         def image = 'quintenv/android-app:latest'
                         
                         sh "echo \${DOCKER_PASSWORD} | docker login -u \${DOCKER_USERNAME} --password-stdin \${registry}"
-                        sh "docker build --memory 4g -t quintenv/android-app ."
+                        sh "docker build --memory 2g -t quintenv/android-app ."
                         sh "docker push quintenv/android-app"
                     }
                 }
